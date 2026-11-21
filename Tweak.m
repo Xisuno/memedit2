@@ -2,7 +2,6 @@
 #import "DLGMem.h"
 #import "MEStore.h"
 #import "MESpeedHack.h"
-#import "RemoteLog.h"
 #if !JAILED
 #import "il2cpp/il2cpp_helper.h"
 #import "il2cpp/DLGUnityHookManager.h"
@@ -32,7 +31,7 @@ static void entry(void)
     MESpeedHackSetEnabled(store.speedEnabled);
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        RLog(@"tweak start, build from %@", @__DATE__);
+        NSLog(@"tweak start, build from %@", @__DATE__);
         [[[DLGMem alloc] init] launchDLGMem];
 
 #if !JAILED

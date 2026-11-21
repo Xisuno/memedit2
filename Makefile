@@ -25,8 +25,6 @@ ifdef MEMEDIT_RELEASE_BUILD
 	TBD_CFLAGS += -DRELEASE_BUILD
 	FINALPACKAGE = 1
 	DEBUG = 0
-else
-	TBD_CFLAGS += -DREMOTE_LOG_IP='"192.168.3.101"'
 endif
 
 $(info Building in $(if $(MEMEDIT_RELEASE_BUILD),Release,Debug) mode ($(if $(filter 1 yes true,$(JAILED)),jailed dylib,tweak package)))
