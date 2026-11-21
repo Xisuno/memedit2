@@ -47,8 +47,7 @@ jobs:
         run: |
           set -euxo pipefail
           cd "$GITHUB_WORKSPACE"
-          make clean
-          MEMEDIT_RELEASE_BUILD=1 JAILED=1 make
+          MEMEDIT_RELEASE_BUILD=1 make clean package
 
       - name: Upload jailed dylib artifact
         uses: actions/upload-artifact@v4
